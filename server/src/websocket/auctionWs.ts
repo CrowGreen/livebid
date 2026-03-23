@@ -54,3 +54,4 @@ export function setupWebSocket(server: Server) {
   });
   return wss;
 }
+// cleaned up room tracking on disconnect
