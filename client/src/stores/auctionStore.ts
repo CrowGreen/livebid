@@ -29,3 +29,4 @@ export const useAuctionStore = create<AuctionStore>((set, get) => ({
   placeBid: (amt) => { const { ws, auctionId } = get(); if (!ws||!auctionId) return; set({ error: null }); ws.send(JSON.stringify({ type: "bid", auctionId, amount: amt })); },
   startAuction: () => { const { ws, auctionId } = get(); if (!ws||!auctionId) return; ws.send(JSON.stringify({ type: "start_auction", auctionId })); },
 }));
+// trying to fix reconnect issue
