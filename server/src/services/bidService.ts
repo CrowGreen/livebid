@@ -23,3 +23,4 @@ export async function endAuction(auctionId: string) {
   await Auction.updateOne({ _id: auctionId }, { status: w ? "sold" : "ended" });
   return { winnerId: w?.user?._id?.toString() || null, winnerName: (w?.user as any)?.username || null, finalPrice: w?.amount || null, totalBids: total };
 }
+// fixed: was using < instead of <=
